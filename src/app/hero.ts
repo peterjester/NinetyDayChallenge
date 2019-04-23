@@ -1,4 +1,6 @@
-export class Hero {
+
+export interface Goal {
+    goal: string;
     id: number;
-    name: string;
+    timeStarted: Date;
   }

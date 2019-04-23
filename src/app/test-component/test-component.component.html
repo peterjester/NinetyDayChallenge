@@ -1,0 +1,20 @@
+<div *ngIf="items$ | async; let items; else loading">
+    <ul class="heroes">
+      <li *ngFor="let item of items">
+          <span class="badge">{{item.id}}</span> {{item.goal}}
+        </li>
+    </ul>
+    <div *ngIf="items.length === 0">No results, try clearing filters</div>
+  </div>
+  <ng-template #loading>Loading&hellip;</ng-template>
+  <div>
+    <h4>Filter by name</h4>
+    <input type="text" [formControl]="favoriteColorControl">
+    <p>
+        Value: {{ favoriteColorControl.value }}
+      </p>
+    <button (click)="filter()">Filter</button>
+    <button (click)="clear()" *ngIf="this.sizeFilter$.getValue()"> -->
+      <em>clear filter</em>
+  </button> 
+  </div>

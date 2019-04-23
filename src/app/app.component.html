@@ -9,6 +9,12 @@
 <div *ngIf="afAuth.user | async as user; else showLogin">
     <h1>Hello {{ user.displayName }}!</h1>
     <button (click)="logout()">Logout</button>
+    <nav>
+      <a routerLink="/heroes">Goals</a>
+      <br>
+      <a routerLink="/test-component">Search</a>
+    </nav>
+    <router-outlet></router-outlet>
   </div>
   <ng-template #showLogin>
     <h1>Welcome to 90 day challenge! </h1>
